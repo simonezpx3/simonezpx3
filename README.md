@@ -24,7 +24,7 @@
 A native, high-performance telemetry dashboard, AI subagents cockpit, and quota monitor for **Google Antigravity** and **Gemini AI**, built specifically for **Omarchy Linux** (`Quickshell` / `Hyprland`) following the design tokens of **System Monitor**.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/simonezpx3/antigem-omarchy/main/assets/omarchy_anim.webp" alt="Anti/Gem Header Animation" width="560">
+  <img src="https://raw.githubusercontent.com/simonezpx3/antigem-omarchy/main/assets/omarchy_anim.webp" alt="Anti/Gem Header Animation" width="180">
 </p>
 
 #### 📊 Complete Feature & Capability Matrix
