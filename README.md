@@ -1,58 +1,93 @@
 <div align="center">
 
-# ⚡ Simonez · Systems & Linux Developer ⚡
+```text
+  ▄████████  ▄█   ▄▄▄▄███▄▄▄▄      ▄██████▄  ███▄▄▄▄      ▄████████ ▀█████████▄  
+  ███    ███ ███ ▄██▀▀▀███▀▀▀██▄   ███    ███ ███▀▀▀██▄   ███    ███   ███    ███ 
+  ███    █▀  ███ ███   ███   ███   ███    ███ ███   ███   ███    █▀    ███    ███ 
+  ███        ███ ███   ███   ███   ███    ███ ███   ███  ▄███▄▄▄      ▄███▄▄▄██▀  
+▀███████████ ███ ███   ███   ███   ███    ███ ███   ███ ▀▀███▀▀▀     ▀▀███▀▀▀██▄  
+         ███ ███ ███   ███   ███   ███    ███ ███   ███   ███    █▄    ███    ███ 
+   ▄█    ███ ███ ███   ███   ███   ███    ███ ███   ███   ███    ███   ███    ███ 
+ ▄████████▀  █▀   ▀█   ███   █▀     ▀██████▀   ▀█   █▀    ██████████ ▄█████████▀  
+```
 
 <p align="center">
-  <b>Building native, high-performance telemetry widgets, desktop tooling, and autonomous AI integrations for Omarchy Linux & Wayland.</b>
+  <b>👾 8-BIT SYSTEMS DEVELOPER · LINUX TINKERER · AI MULTI-AGENT ARCHITECT 👾</b><br>
+  <i>Crafting native telemetry widgets, desktop HUDs, and autonomous agent tooling for Omarchy Linux & Wayland.</i>
 </p>
 
 <p align="center">
-  <a href="https://github.com/simonezpx3/antigem-omarchy"><img src="https://img.shields.io/badge/Flagship-Anti%2FGem%20v1.2-38bdf8?style=for-the-badge&logo=google&logoColor=white" alt="Anti/Gem"></a>
-  <img src="https://img.shields.io/badge/Platform-Omarchy%20Linux-f97316?style=for-the-badge&logo=archlinux&logoColor=white" alt="Omarchy Linux">
-  <img src="https://img.shields.io/badge/Compositor-Hyprland%20%28Wayland%29-2dd4bf?style=for-the-badge" alt="Hyprland">
-  <img src="https://img.shields.io/badge/Stack-Qt6%20%7C%20Python%20%7C%20QML-c084fc?style=for-the-badge&logo=qt&logoColor=white" alt="Qt6 Python">
-  <img src="https://img.shields.io/badge/GPU-RTX%203070%20%7C%20CUDA-76b900?style=for-the-badge&logo=nvidia&logoColor=white" alt="NVIDIA RTX 3070">
+  <a href="https://github.com/simonezpx3/antigem-omarchy"><img src="https://img.shields.io/badge/QUEST%2001-ANTI%2FGEM%20v1.2-38bdf8?style=flat-square&logo=google&logoColor=white" alt="Anti/Gem"></a>
+  <img src="https://img.shields.io/badge/SYSTEM-OMARCHY%20LINUX-f97316?style=flat-square&logo=archlinux&logoColor=white" alt="Omarchy Linux">
+  <img src="https://img.shields.io/badge/DISPLAY-HYPRLAND%20WAYLAND-2dd4bf?style=flat-square" alt="Hyprland">
+  <img src="https://img.shields.io/badge/ENGINE-QT6%20%7C%20PYTHON-c084fc?style=flat-square&logo=qt&logoColor=white" alt="Qt6 Python">
+  <img src="https://img.shields.io/badge/ACCELERATOR-RTX%203070%20CUDA-76b900?style=flat-square&logo=nvidia&logoColor=white" alt="NVIDIA RTX 3070">
 </p>
 
 ---
 
 </div>
 
-## 🌟 Featured Project
+## 👾 [ 01 // FEATURED_QUEST : ANTI/GEM ]
 
-### 🚀 [Anti/Gem (Google Antigravity & Gemini Monitor)](https://github.com/simonezpx3/antigem-omarchy)
-A native, high-performance telemetry dashboard, subagents fleet monitor, and quota tracker for **Google Antigravity** and **Gemini AI**, built specifically for **Omarchy Linux** (`Quickshell` / `Hyprland`).
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│  ▄█████▄  ███   ███  ▄███████  ▄███████   █ █▄  ▄█  █▀▀  ▄▄▄  ███  █ █  █▄  █ █ █ █ ▄   │
+│  ███   ███ ███   ███  ███   ███  ███   ███  █ █▀▄▀█  █▀  █   █ ███  █ █  █ ▀▄█ █ █ █ █   │
+│  ███   ███ ▀███▄▄▄███ ▄███▄▄▄██▀  ███   █▀   █ █ ▀ █  ▀▀▀ ▀▀▀█ ▀█▀  ▀▀▀  ▀  ▀▀  ▀▀▀▀ ▀   │
+│  ▀█████▀    ▀███▀▀▀███ ▀███▀▀▀▀    ███   ███                                           │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
-* 🎨 **Adaptive System Theme Sync:** 100% reactive color matching with active Omarchy desktop themes (Nord, Catppuccin, Tokyo Night, Gruvbox, Wallhaven).
-* 🤖 **Subagents Fleet & Local GPU Workers:** Live telemetry of autonomous AI subagents and local GPU models (`qwen2.5-coder:7b`, `deepseek-r1:7b` on NVIDIA RTX 3070).
-* 🇺🇦 **Full Ukrainian Localization (`uk`):** Complete translations across all 3 dashboard tabs.
-* 🛡️ **Hardened Security:** Runs strictly in user space with `0700`/`0600` permissions and sanitized inputs.
+<div align="center">
+  <table border="0" style="border: none; background: transparent;">
+    <tr>
+      <td width="90" align="center" valign="middle">
+        <img src="assets/antigravity_8bit.png" width="76" alt="8-bit Antigravity Logo" />
+      </td>
+      <td valign="middle">
+        <h3>🕹️ <a href="https://github.com/simonezpx3/antigem-omarchy">ANTI/GEM · GOOGLE ANTIGRAVITY & GEMINI MONITOR</a></h3>
+        <p><b>A high-performance 8-bit retro arcade telemetry HUD and autonomous AI subagents monitor for Omarchy Linux (Quickshell / Hyprland).</b></p>
+      </td>
+    </tr>
+  </table>
+</div>
 
-```bash
-# 1-Click Install on Omarchy Linux
-omarchy plugin add https://github.com/simonezpx3/antigem-omarchy.git --enable
+```text
+╔════════════════════════════════════════════════════════════════════════════════════════╗
+║  [SYSTEM_METRICS]                                                       [STAGE: 1.2.0] ║
+╠════════════════════════════════════════════════════════════════════════════════════════╣
+║  ► 🎨 PALETTES   : Dynamic System Theme Sync (Nord, Tokyo Night, Gruvbox, Aether)      ║
+║  ► 🤖 SUBAGENTS  : sec-auditor · qml-designer · test-runner · doc-researcher           ║
+║  ► ⚡ GPU CORES  : NVIDIA GeForce RTX 3070 (8GB) + AMD Radeon iGPU Real-Time Telemetry ║
+║  ► 🇺🇦 LOCALES    : 8 Native Locales with 100% Ukrainian Translation Coverage           ║
+║  ► 🛡️ SECURITY   : 0700/0600 Sandboxed User-Space Engine (No Root / No shell=True)     ║
+╠════════════════════════════════════════════════════════════════════════════════════════╣
+║  [INSERT COIN TO INSTALL]                                                              ║
+║  $ omarchy plugin add https://github.com/simonezpx3/antigem-omarchy.git --enable      ║
+╚════════════════════════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
 
-## 🛠️ Core Tech Stack & Environment
+## 🛠️ [ 02 // HARDWARE_RIG & TECH_MATRIX ]
 
 <div align="center">
 
-| Domain | Technologies & Tooling |
+| 👾 Domain | ⚡ Specifications & Tooling |
 | :--- | :--- |
 | **Operating System** | **Omarchy Linux** (Arch-based), Systemd, Linux Kernel 6.x |
 | **Display & Compositor** | **Hyprland** (Wayland), Quickshell, Qt6 Quick / QML |
 | **Languages** | **Python 3**, **Qt / QML**, **Bash / Shell**, C++, Rust |
-| **AI & Multi-Agent Systems** | **Google Antigravity SDK**, **Gemini 2.5/Pro API**, Ollama Local Models |
-| **Hardware Rig** | AMD Ryzen 7 7800X3D (8C/16T) · NVIDIA GeForce RTX 3070 (8GB) · 32GB DDR5 |
-| **Security Principles** | Hardened umask (`0700`/`0600`), strict input validation, non-root execution |
+| **AI Multi-Agent Engine** | **Google Antigravity SDK**, **Gemini 2.5/Pro API**, Ollama Local Models |
+| **Battle Station Rig** | AMD Ryzen 7 7800X3D (8C/16T) · NVIDIA GeForce RTX 3070 (8GB) · 32GB DDR5 |
+| **Security Architecture** | Strict umask (`0700`/`0600`), regex sanitization, sandboxed non-root execution |
 
 </div>
 
 ---
 
-## 📊 GitHub Telemetry & Stats
+## 📊 [ 03 // TELEMETRY & LIVE_STATS ]
 
 <div align="center">
 
@@ -64,5 +99,5 @@ omarchy plugin add https://github.com/simonezpx3/antigem-omarchy.git --enable
 ---
 
 <div align="center">
-  <sub>Built with ⚡ on Omarchy Linux · Powered by Google Antigravity & Arci</sub>
+  <sub>🕹️ LEVEL UP YOUR LINUX · POWERED BY GOOGLE ANTIGRAVITY & ARCI 👾</sub>
 </div>
