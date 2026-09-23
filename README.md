@@ -71,7 +71,7 @@ Standalone DKMS kernel module bringing complete Linux hardware support for the *
 | **Languages** | **QML / Qt6**, **Python 3**, **Bash / Shell**, **C / C++**, Rust |
 | **AI Ecosystem** | **Google Antigravity SDK**, **Gemini Interactions API**, Ollama, FreeToken MoE |
 | **Hardware Rig** | AMD Ryzen 7 7800X3D (8C/16T) · NVIDIA GeForce RTX 3070 8GB · 32GB DDR5 |
-| **Engineering DNA** | `s&A` (`0x732641`), strict security hygiene (`0700`/`0600`), zero leak policy |
+| **Engineering DNA** | Modular UNIX philosophy, strict security hygiene (`0700`/`0600`), zero leak policy |
 
 </div>
 
@@ -89,5 +89,5 @@ Standalone DKMS kernel module bringing complete Linux hardware support for the *
 ---
 
 <div align="center">
-  <sub>Built with ⚡ on Omarchy Linux · Powered by Google Antigravity & Arci (`s&A`)</sub>
+  <sub>Built with ⚡ on Omarchy Linux · Powered by Google Antigravity & Arci</sub>
 </div>
