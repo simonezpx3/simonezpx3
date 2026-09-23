@@ -37,7 +37,6 @@ omarchy plugin add https://github.com/simonezpx3/omarchy-vkeyboard.git --enable
 ---
 
 ### 🚀 [Anti/Gem — AI Telemetry & Quota Monitor (`simonez.antigem`)](https://github.com/simonezpx3/antigem)
-**Marketplace:** [Issue #8294](https://github.com/omacom/omarchy-plugin-marketplace/issues/8294) (Submitted & Validated)
 
 A native, high-performance telemetry dashboard, multi-agent fleet monitor, quota tracker, and local GPU co-worker hub for **Google Antigravity** and **Gemini AI**, crafted specifically for **Omarchy Linux** (`Quickshell` / `Qt6` / `Hyprland`).
 
