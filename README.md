@@ -1,93 +1,72 @@
+# simonezpx3 — Local-First AI, 3D V-Cache & Omarchy Linux Engineering
+
+[![OS: Omarchy Linux](https://img.shields.io/badge/OS-Omarchy%20%2F%20Arch%20Linux-1793d1.svg)](https://omarchy.org)
+[![CPU: Ryzen 7 7800X3D](https://img.shields.io/badge/CPU-Ryzen%207%207800X3D%20(96MB%20L3)-orange.svg)](#hardware--engineering-principles)
+[![GPU: RTX 3070 8GB](https://img.shields.io/badge/GPU-RTX%203070%208GB-76b900.svg)](#public-repositories--benchmarks)
+[![Compositor: Hyprland](https://img.shields.io/badge/Wayland-Hyprland%20%2F%20Quickshell-2dd4bf.svg)](#public-repositories--benchmarks)
+
+## TL;DR
+
+Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** under **Omarchy Linux (Hyprland / Wayland)**. Everything here focuses on squeezing maximum throughput out of consumer hardware—pushing **35B MoE models to 76.3 tok/s**, running **1M-vector RAG inside CPU L3 in 163 µs**, and building native Wayland/PipeWire/DKMS tooling with zero cloud lock-in.
+
+> [!IMPORTANT]
+> **Local-first by default.** Consumer 8 GB GPUs hit a VRAM wall fast; pairing `llama.cpp` hot-expert caching with Ryzen 3D V-Cache core pinning (`vcache-run -c 2-7`) and non-temporal DDR5 prefetching (`GGML_MOE_NTA=1`) turns bandwidth-starved spillovers into smooth, interactive inference.
+
+> [!TIP]
+> **Strict security & hygiene baseline.** All public repositories follow `0700`/`0600` permission isolation, `shellcheck`/clippy/unit-test gates, and pre-push secret/path auditing.
+
+## Architecture // AHS Neural Hive (L0–L5)
+
+Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache retrieval, 8 GB CUDA inference, and edge/cloud overflow:
+
 <div align="center">
-
-# ⚡ Simonez · Systems & Linux Developer ⚡
-
-<p align="center">
-  <b>Building native high-performance desktop tooling, Wayland widgets, system drivers, and autonomous AI integrations for Omarchy Linux.</b>
-</p>
-
-<p align="center">
-  <a href="https://omarchyplugins.com/plugin.html?id=simonez.vkeyboard"><img src="https://img.shields.io/badge/Marketplace-Published%20%26%20Verified-10b981?style=flat-square&logo=checkmarx&logoColor=white" alt="Published & Verified"></a>
-  <img src="https://img.shields.io/badge/Platform-Omarchy%20Linux-f97316?style=flat-square&logo=archlinux&logoColor=white" alt="Omarchy Linux">
-  <img src="https://img.shields.io/badge/Compositor-Hyprland%20(Wayland)-2dd4bf?style=flat-square" alt="Hyprland">
-  <img src="https://img.shields.io/badge/Stack-Qt6%20%7C%20QML%20%7C%20Python%20%7C%20C-c084fc?style=flat-square&logo=qt&logoColor=white" alt="Qt6 Python">
-  <img src="https://img.shields.io/badge/GPU-RTX%203070%20%7C%20CUDA-76b900?style=flat-square&logo=nvidia&logoColor=white" alt="NVIDIA RTX 3070">
-</p>
-
----
-
+  <img src="assets/neural_hive_3d.webp" alt="AHS Neural Hive 3D Pyramid Topology" width="820" />
 </div>
 
-## 🌟 Featured Projects
+```mermaid
+flowchart LR
+    L0["L0 // Core & State Machine\nAGENTS.md S1/S2/S3"]
+    L1["L1 // 96 MiB 3D V-Cache (11 ns)\n1M-Vector RAG (163 µs) · Speculative N-Gram"]
+    L2["L2 // 8 GB RTX 3070 CUDA\nHot MoE Experts · q8_0 KV · ComfyUI"]
+    L3["L3 // Dual-Channel DDR5-6000\nCold MoE Experts (6C 2-7 · NTA Prefetch)"]
+    L4["L4 // Desktop & Kernel Layer\nHyprland · Quickshell · PipeWire · DKMS"]
 
-### ⌨️ [Virtual Keyboard & Layout Switcher (`simonez.vkeyboard`)](https://github.com/simonezpx3/omarchy-vkeyboard)
-**Official Omarchy Marketplace:** [Published & Verified on Omarchy Plugins](https://omarchyplugins.com/plugin.html?id=simonez.vkeyboard)
-
-An advanced, non-focus-stealing On-Screen Virtual Keyboard (OSK) with instant `wtype` keystroke injection, system shortcut dispatching, dynamic multi-language XKB layout switching, and **Unified CRT Monolithic Grid** styling for Omarchy Linux & Hyprland.
-
-* **Non-Focus-Stealing Architecture:** Layer-shell overlay running on `WlrLayer.Overlay` with `WlrKeyboardFocus.None` — virtual keystrokes stream directly into active target windows without stealing cursor focus.
-* **Hardware Formats & Customization:** 6 selectable physical layouts (60%, 65%, 75%, TKL, Full Size, macOS), fluid opacity controls, dynamic XKB layouts repeater, and frameless mode.
-* **System Dispatcher:** Seamless integration with all 227+ Omarchy & Hyprland system shortcuts via `vkeyboard-ctl dispatch`.
-
-```bash
-# 1-Click Install via Omarchy Marketplace
-omarchy plugin add https://github.com/simonezpx3/omarchy-vkeyboard.git --enable
+    L0 --> L1
+    L1 <-->|"Zero-VRAM Drafting"| L2
+    L2 <-->|"PCIe 4.0 x16"| L3
+    L4 --> L0
 ```
 
----
+## Public Repositories & Benchmarks
 
-### 🚀 [Anti/Gem — AI Telemetry & Quota Monitor (`simonez.antigem`)](https://github.com/simonezpx3/antigem)
+| Repository | Domain | Highlights & Measured Results |
+| :--- | :--- | :--- |
+| [**`zen-vcache-ai`**](https://github.com/simonezpx3/zen-vcache-ai) | Local AI / C / AVX-512 | **35B MoE @ `76.3 tok/s`** (`+25.5%` gen, `+22.2%` pp128 via `GGML_MOE_NTA=1`); **1M-vector RAG in `162.8 µs`** (`6,144 QPS`, `366 GB/s`); **1.2x–10.8x** code-editing speedup with `0 MiB` extra VRAM |
+| [**`omarchy-qwenimage`**](https://github.com/simonezpx3/omarchy-qwenimage) | Generative AI / Python | **QIS** — local-first generative studio (Text-to-Image, Image-to-Image, Turbo diffusion, WD14 Danbooru interrogator, Qwen3-VL vision reverse-engineering, SIMD Lanczos resizer, ComfyUI backend) |
+| [**`omarchy-bt-audio-eq`**](https://github.com/simonezpx3/omarchy-bt-audio-eq) | PipeWire / QML / Bash | Bluetooth codec & quality switcher (`LDAC`, `AAC`, `SBC-XQ`, `SBC`), PipeWire sample-rate selector, live telemetry, and 2-stage 10-band EQ with AutoEq |
+| [**`omarchy-vkeyboard`**](https://github.com/simonezpx3/omarchy-vkeyboard) | Wayland / Quickshell | Non-focus-stealing OSK (`WlrLayer.Overlay`) with `wtype` injection, multi-language XKB switcher, and CRT Monolithic Grid styling ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.vkeyboard)) |
+| [**`btusb-mt7902-dkms`**](https://github.com/simonezpx3/btusb-mt7902-dkms) | Linux Kernel / DKMS | Standalone DKMS driver patch & power fix for MediaTek MT7902 Bluetooth (`0489:e156`) on Arch / Omarchy kernels |
 
-A native, high-performance telemetry dashboard, multi-agent fleet monitor, quota tracker, and local GPU co-worker hub for **Google Antigravity** and **Gemini AI**, crafted specifically for **Omarchy Linux** (`Quickshell` / `Qt6` / `Hyprland`).
+## Hardware & Engineering Principles
 
-* **Multi-Account Auto Failover:** Automatic failover across 3 Google AI Pro pools (`agy`, `agy2`, `agy3`) upon individual session quota exhaustion.
-* **Live Quota Gauges & Context Breakdown:** Real-time 5-Hour Session Quota, 7-Day Weekly Limit, and 1M Context Window breakdown (System rules, Tool schemas, Files, History, Free headroom).
-* **Local GPU & Subagent Telemetry:** Zero-token local inference monitoring (RTX 3070 CUDA, Ternary Bonsai 2 27B, Qwen Coder) and autonomous background subagents cockpit.
+<details>
+<summary><strong>Workstation Spec, Stack & Quickstart Commands</strong></summary>
 
-```bash
-# 1-Click Install via Omarchy Plugin Manager
-omarchy plugin add https://github.com/simonezpx3/antigem.git --enable
-```
-
----
-
-### 📡 [btusb-mt7902-dkms — MediaTek MT7902 Linux Bluetooth Driver](https://github.com/simonezpx3/btusb-mt7902-dkms)
-
-Standalone DKMS kernel module bringing complete Linux hardware support for the **MediaTek MT7902** wireless/Bluetooth combo chip on modern Arch / Omarchy kernels.
-
-* Automated DKMS rebuilds on kernel updates (`linux`, `linux-zen`, `linux-omarchy`).
-* Zero latency audio streaming and full Bluetooth 5.3 headset support.
-
----
-
-## 🛠️ Core Tech Stack & Battle Station
-
-<div align="center">
-
-| Domain | Technologies & Tooling |
+| Component | Specification |
 | :--- | :--- |
-| **Operating System** | **Omarchy Linux** (Arch-based), Linux Kernel 6.x / 7.x, systemd |
-| **Display & Compositor** | **Hyprland** (Wayland), Quickshell, Qt6 Quick / QML |
-| **Languages** | **QML / Qt6**, **Python 3**, **Bash / Shell**, **C / C++**, Rust |
-| **AI Ecosystem** | **Google Antigravity SDK**, **Gemini Interactions API**, Ollama, FreeToken MoE |
-| **Hardware Rig** | AMD Ryzen 7 7800X3D (8C/16T) · NVIDIA GeForce RTX 3070 8GB · 32GB DDR5 |
-| **Engineering DNA** | Modular UNIX philosophy, strict security hygiene (`0700`/`0600`), zero leak policy |
+| **CPU** | AMD Ryzen 7 7800X3D (8C/16T, 96 MiB 3D V-Cache, AVX-512) |
+| **GPU** | NVIDIA GeForce RTX 3070 8 GB |
+| **Memory** | 32 GB Dual-Channel DDR5-6000 |
+| **OS & WM** | Omarchy Linux (Arch-based) · Hyprland (Wayland) · Quickshell / Qt6 |
+| **Languages** | C / C++, Python, Rust, QML / Qt6, Bash |
 
-</div>
+```bash
+# Run 3D V-Cache MoE inference pinned to 6 cores (2-7)
+GGML_MOE_NTA=1 ./bin/vcache-run -c 2-7 -- llama-server -m model.gguf -ngl 99 -cmoe --moe-cache-mib 4096 -t 6
 
----
+# Install Omarchy plugins directly
+omarchy plugin add https://github.com/simonezpx3/omarchy-vkeyboard.git --enable
+omarchy plugin add https://github.com/simonezpx3/omarchy-bt-audio-eq.git --enable
+```
 
-## 📊 GitHub Telemetry & Stats
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=simonezpx3&show_icons=true&theme=radical&bg_color=060a14&title_color=38bdf8&text_color=e2e6d8&icon_color=4ade80&border_color=1e293b&hide_border=false" alt="Simonez GitHub Stats" height="165" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=simonezpx3&layout=compact&theme=radical&bg_color=060a14&title_color=38bdf8&text_color=e2e6d8&border_color=1e293b&hide_border=false" alt="Top Languages" height="165" />
-
-</div>
-
----
-
-<div align="center">
-  <sub>Built with ⚡ on Omarchy Linux · Powered by Google Antigravity & Arci</sub>
-</div>
+</details>
