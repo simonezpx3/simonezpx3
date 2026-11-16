@@ -42,8 +42,8 @@ flowchart LR
 | Repository | Domain | Highlights & Measured Results |
 | :--- | :--- | :--- |
 | [**`zen-vcache-ai`**](https://github.com/simonezpx3/zen-vcache-ai) | Local AI / C / AVX-512 | **35B MoE @ `76.3 tok/s`** (`+25.5%` gen, `+22.2%` pp128 via `GGML_MOE_NTA=1`); **1M-vector RAG in `162.8 µs`** (`6,144 QPS`, `366 GB/s`); **1.2x–10.8x** code-editing speedup with `0 MiB` extra VRAM |
-| [**`omarchy-qwenimage`**](https://github.com/simonezpx3/omarchy-qwenimage) | Generative AI / Python | **QIS** — local-first generative studio (Text-to-Image, Image-to-Image, Turbo diffusion, WD14 Danbooru interrogator, Qwen3-VL vision reverse-engineering, SIMD Lanczos resizer, ComfyUI backend) |
-| [**`omarchy-bt-audio-eq`**](https://github.com/simonezpx3/omarchy-bt-audio-eq) | PipeWire / QML / Bash | Bluetooth codec & quality switcher (`LDAC`, `AAC`, `SBC-XQ`, `SBC`), PipeWire sample-rate selector, live telemetry, and 2-stage 10-band EQ with AutoEq |
+| [**`omarchy-qwenimage`**](https://github.com/simonezpx3/omarchy-qwenimage) | Generative AI / Python | **QIS** — local-first generative studio (Text-to-Image, Image-to-Image, Turbo diffusion, WD14 Danbooru interrogator, Qwen3-VL vision reverse-engineering, SIMD Lanczos resizer, ComfyUI backend) ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.qwenimage)) |
+| [**`omarchy-bt-audio-eq`**](https://github.com/simonezpx3/omarchy-bt-audio-eq) | PipeWire / QML / Bash | Bluetooth codec & quality switcher (`LDAC`, `AAC`, `SBC-XQ`, `SBC`), PipeWire sample-rate selector, live telemetry, and 2-stage 10-band EQ with AutoEq ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.btquality)) |
 | [**`omarchy-vkeyboard`**](https://github.com/simonezpx3/omarchy-vkeyboard) | Wayland / Quickshell | Non-focus-stealing OSK (`WlrLayer.Overlay`) with `wtype` injection, multi-language XKB switcher, and CRT Monolithic Grid styling ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.vkeyboard)) |
 | [**`btusb-mt7902-dkms`**](https://github.com/simonezpx3/btusb-mt7902-dkms) | Linux Kernel / DKMS | Standalone DKMS driver patch & power fix for MediaTek MT7902 Bluetooth (`0489:e156`) on Arch / Omarchy kernels |
 
@@ -65,8 +65,9 @@ flowchart LR
 GGML_MOE_NTA=1 ./bin/vcache-run -c 2-7 -- llama-server -m model.gguf -ngl 99 -cmoe --moe-cache-mib 4096 -t 6
 
 # Install Omarchy plugins directly
-omarchy plugin add https://github.com/simonezpx3/omarchy-vkeyboard.git --enable
+omarchy plugin add https://github.com/simonezpx3/omarchy-qwenimage.git --enable
 omarchy plugin add https://github.com/simonezpx3/omarchy-bt-audio-eq.git --enable
+omarchy plugin add https://github.com/simonezpx3/omarchy-vkeyboard.git --enable
 ```
 
 </details>
