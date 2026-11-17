@@ -33,10 +33,9 @@ Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache re
 | [**`omarchy-vkeyboard`**](https://github.com/simonezpx3/omarchy-vkeyboard) | Wayland / Quickshell | Non-focus-stealing OSK (`WlrLayer.Overlay`) with `wtype` injection, multi-language XKB switcher, and CRT Monolithic Grid styling ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.vkeyboard)) |
 | [**`btusb-mt7902-dkms`**](https://github.com/simonezpx3/btusb-mt7902-dkms) | Linux Kernel / DKMS | Standalone DKMS driver patch & power fix for MediaTek MT7902 Bluetooth (`0489:e156`) on Arch / Omarchy kernels |
 
-> [!IMPORTANT]
-> **Why these numbers matter on consumer 8 GB hardware:**
-> - **35B MoE @ `76.3 tok/s`:** A `35B Q4` model (~`20 GB`) spills >`12 GB` past `8 GB` VRAM into DDR5, where naive `llama.cpp` runs stall at `30–50 tok/s`. Streaming only active experts with `vcache-run` + `GGML_MOE_NTA=1` eliminates L3 thrashing.
-> - **1M-Vector RAG in `162.8 µs` (`6,144 QPS`, `366 GB/s`):** Packing `1M` binary vectors (`61 MiB`) inside the `96 MiB` L3 V-Cache with AVX-512 `VPOPCNTDQ` runs **10–50× faster** than RAM-bound FAISS/HNSW (`1–10 ms`) with **0% GPU usage**.
+<div align="center">
+  <img src="assets/benchmarks_card.svg" alt="Why These Numbers Matter: 35B MoE 76.3 tok/s and 1M-Vector RAG 162.8 us" width="860" />
+</div>
 
 ## Hardware & Engineering Principles
 

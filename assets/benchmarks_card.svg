@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 236" width="960" height="236" role="img" aria-label="Benchmark Highlights: 35B MoE 76.3 tok/s and 1M-Vector RAG 162.8 us">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090d14"/>
+      <stop offset="100%" stop-color="#0f1722"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#162130" stroke-width="0.75"/>
+    </pattern>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+      .title { font-size: 14px; font-weight: 700; fill: #e2e8f0; letter-spacing: 0.08em; }
+      .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; }
+      .hero { font-size: 28px; font-weight: 800; fill: #f8fafc; letter-spacing: -0.02em; }
+      .heroSub { font-size: 13px; font-weight: 600; fill: #cbd5e1; }
+      .pill { font-size: 11px; font-weight: 600; }
+      .body { font-size: 12px; fill: #94a3b8; }
+    </style>
+  </defs>
+
+  <!-- Outer Bubble -->
+  <rect width="960" height="236" rx="14" fill="url(#bgGrad)"/>
+  <rect width="960" height="236" rx="14" fill="url(#grid)" opacity="0.65"/>
+  <rect x="0.5" y="0.5" width="959" height="235" rx="14" fill="none" stroke="#1e293b"/>
+
+  <!-- Header -->
+  <text x="28" y="34" class="mono title">WHY THESE NUMBERS MATTER // 8 GB VRAM + 96 MiB 3D V-CACHE</text>
+  <rect x="760" y="18" width="172" height="24" rx="12" fill="#0f2922" stroke="#10b981" stroke-width="1"/>
+  <text x="846" y="34" text-anchor="middle" class="mono pill" fill="#34d399">CONSUMER HARDWARE</text>
+
+  <!-- Left KPI Bubble: 35B MoE -->
+  <g transform="translate(28, 56)">
+    <rect width="440" height="154" rx="10" fill="#131c2b" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="20" y="26" class="mono tag" fill="#38bdf8">35B MoE SPILLOVER (QWEN3.8-35B-A3B)</text>
+    <text x="20" y="64" class="sans hero">76.3 tok/s</text>
+    <text x="172" y="62" class="mono heroSub">on 8 GB RTX 3070</text>
+    <rect x="20" y="76" width="268" height="22" rx="6" fill="#0c2233" stroke="#1e4966" stroke-width="0.9"/>
+    <text x="30" y="91" class="mono pill" fill="#7dd3fc">vs. 30–50 tok/s naive DDR5 spillover</text>
+    <text x="20" y="119" class="sans body">A 35B Q4 model (~20 GB) spills &gt;12 GB past VRAM into RAM.</text>
+    <text x="20" y="137" class="sans body">Streaming active experts via vcache-run + NTA stops L3 thrashing.</text>
+  </g>
+
+  <!-- Right KPI Bubble: 1M-Vector RAG -->
+  <g transform="translate(492, 56)">
+    <rect width="440" height="154" rx="10" fill="#131c2b" stroke="#34d399" stroke-width="1.2"/>
+    <text x="20" y="26" class="mono tag" fill="#34d399">1M-VECTOR LOCAL RAG (AVX-512 VPOPCNTDQ)</text>
+    <text x="20" y="64" class="sans hero">162.8 µs</text>
+    <text x="156" y="62" class="mono heroSub">6,144 QPS · 366 GB/s</text>
+    <rect x="20" y="76" width="334" height="22" rx="6" fill="#0d2922" stroke="#185947" stroke-width="0.9"/>
+    <text x="30" y="91" class="mono pill" fill="#6ee7b7">10–50× faster than RAM FAISS/HNSW (1–10 ms) · 0% GPU</text>
+    <text x="20" y="119" class="sans body">1M binary vectors (61 MiB) fit entirely inside 96 MiB L3 V-Cache.</text>
+    <text x="20" y="137" class="sans body">Instant stage-1 retrieval before reranking with zero GPU load.</text>
+  </g>
+</svg>
