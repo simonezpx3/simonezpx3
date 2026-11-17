@@ -33,6 +33,9 @@ Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache re
 | [**`omarchy-vkeyboard`**](https://github.com/simonezpx3/omarchy-vkeyboard) | Wayland / Quickshell | Non-focus-stealing OSK (`WlrLayer.Overlay`) with `wtype` injection, multi-language XKB switcher, and CRT Monolithic Grid styling ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.vkeyboard)) |
 | [**`btusb-mt7902-dkms`**](https://github.com/simonezpx3/btusb-mt7902-dkms) | Linux Kernel / DKMS | Standalone DKMS driver patch & power fix for MediaTek MT7902 Bluetooth (`0489:e156`) on Arch / Omarchy kernels |
 
+> [!NOTE]
+> **Why these numbers matter:** A `35B Q4` MoE (~`20 GB`) spills >`12 GB` past `8 GB` VRAM into DDR5, where naive `llama.cpp` runs stall around `30–50 tok/s`; streaming only active experts with `vcache-run` + `GGML_MOE_NTA=1` hits **`76.3 tok/s`**. Likewise, packing `1M` binary vectors (`61 MiB`) inside the `96 MiB` L3 V-Cache runs AVX-512 `VPOPCNTDQ` retrieval in **`162.8 µs`** (`0%` GPU)—**10–50× faster** than typical RAM-bound FAISS/HNSW (`1–10 ms`).
+
 ## Hardware & Engineering Principles
 
 <details>
