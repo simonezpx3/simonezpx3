@@ -15,14 +15,6 @@ Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** u
 > [!TIP]
 > **Strict security & hygiene baseline.** All public repositories follow `0700`/`0600` permission isolation, `shellcheck`/clippy/unit-test gates, and pre-push secret/path auditing.
 
-## Architecture // AHS Neural Hive (L0–L4)
-
-Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache retrieval, 8 GB CUDA inference, and edge/cloud overflow:
-
-<div align="center">
-  <img src="assets/neural_hive_arch.svg" alt="AHS Neural Hive Architecture (L0–L4)" width="860" />
-</div>
-
 ## Public Repositories & Benchmarks
 
 | Repository | Domain | Highlights & Measured Results |
