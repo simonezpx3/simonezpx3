@@ -9,6 +9,10 @@
 
 Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** under **Omarchy Linux (Hyprland / Wayland)**. Everything here focuses on squeezing maximum throughput out of consumer hardware—pushing **35B MoE models to 76.3 tok/s**, running **1M-vector RAG inside CPU L3 in 163 µs**, and building native Wayland/PipeWire/DKMS tooling with zero cloud lock-in.
 
+<div align="center">
+  <img src="assets/benchmarks_card.svg" alt="Why These Numbers Matter: 35B MoE 76.3 tok/s and 1M-Vector RAG 162.8 us" width="860" />
+</div>
+
 > [!IMPORTANT]
 > **Local-first by default.** Consumer 8 GB GPUs hit a VRAM wall fast; pairing `llama.cpp` hot-expert caching with Ryzen 3D V-Cache core pinning (`vcache-run -c 2-7`) and non-temporal DDR5 prefetching (`GGML_MOE_NTA=1`) turns bandwidth-starved spillovers into smooth, interactive inference.
 
@@ -32,10 +36,6 @@ Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache re
 | [**`omarchy-bt-audio-eq`**](https://github.com/simonezpx3/omarchy-bt-audio-eq) | PipeWire / QML / Bash | Bluetooth codec & quality switcher (`LDAC`, `AAC`, `SBC-XQ`, `SBC`), PipeWire sample-rate selector, live telemetry, and 2-stage 10-band EQ with AutoEq ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.btquality)) |
 | [**`omarchy-vkeyboard`**](https://github.com/simonezpx3/omarchy-vkeyboard) | Wayland / Quickshell | Non-focus-stealing OSK (`WlrLayer.Overlay`) with `wtype` injection, multi-language XKB switcher, and CRT Monolithic Grid styling ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.vkeyboard)) |
 | [**`btusb-mt7902-dkms`**](https://github.com/simonezpx3/btusb-mt7902-dkms) | Linux Kernel / DKMS | Standalone DKMS driver patch & power fix for MediaTek MT7902 Bluetooth (`0489:e156`) on Arch / Omarchy kernels |
-
-<div align="center">
-  <img src="assets/benchmarks_card.svg" alt="Why These Numbers Matter: 35B MoE 76.3 tok/s and 1M-Vector RAG 162.8 us" width="860" />
-</div>
 
 ## Hardware & Engineering Principles
 
