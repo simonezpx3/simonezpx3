@@ -40,7 +40,7 @@
     <text x="418" y="36" text-anchor="end" class="sans hero" fill="#38bdf8">76.3 tok/s</text>
 
     <text x="18" y="66" class="sans tierName">8 GB VRAM + DDR5 Spillover</text>
-    <text x="418" y="66" text-anchor="end" class="mono metric" fill="#7dd3fc">vs. 30–50 naive</text>
+    <text x="418" y="66" text-anchor="end" class="mono metric" fill="#7dd3fc">vs. 30–50 native</text>
 
     <text x="18" y="96" class="sans body">A 35B Q4 model (~20 GB) spills &gt;12 GB into RAM.</text>
     <text x="18" y="120" class="mono submono">vcache-run -c 2-7 + NTA stops L3 thrashing.</text>
