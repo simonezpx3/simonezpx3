@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-label="Hybrid AI System Architecture">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620" role="img" aria-label="Hybrid AI System Architecture">
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#090d14"/>
@@ -19,97 +19,97 @@
     <style>
       .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
       .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
-      .title { font-size: 15px; font-weight: 700; fill: #e2e8f0; letter-spacing: 0.08em; }
-      .subtitle { font-size: 11px; fill: #64748b; letter-spacing: 0.04em; }
-      .tierTag { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; }
-      .tierName { font-size: 14px; font-weight: 700; fill: #f1f5f9; }
-      .tierBody { font-size: 12px; fill: #94a3b8; }
-      .metric { font-size: 11px; font-weight: 600; }
-      .edgeLabel { font-size: 10px; fill: #94a3b8; }
+      .title { font-size: 18px; font-weight: 700; fill: #e2e8f0; letter-spacing: 0.06em; }
+      .subtitle { font-size: 13px; fill: #64748b; letter-spacing: 0.03em; }
+      .tierTag { font-size: 13px; font-weight: 700; letter-spacing: 0.05em; }
+      .tierName { font-size: 16px; font-weight: 700; fill: #f1f5f9; }
+      .tierBody { font-size: 13.5px; fill: #cbd5e1; }
+      .metric { font-size: 13px; font-weight: 600; }
+      .edgeLabel { font-size: 12px; fill: #94a3b8; }
     </style>
   </defs>
 
   <!-- Canvas -->
-  <rect width="960" height="560" rx="12" fill="url(#bgGrad)"/>
-  <rect width="960" height="560" rx="12" fill="url(#grid)" opacity="0.65"/>
-  <rect x="0.5" y="0.5" width="959" height="559" rx="12" fill="none" stroke="#1e293b"/>
+  <rect width="960" height="620" rx="12" fill="url(#bgGrad)"/>
+  <rect width="960" height="620" rx="12" fill="url(#grid)" opacity="0.65"/>
+  <rect x="0.5" y="0.5" width="959" height="619" rx="12" fill="none" stroke="#1e293b"/>
 
   <!-- Header -->
-  <text x="32" y="34" class="mono title">AI HYBRID SYSTEM TOPOLOGY (L0–L4)</text>
-  <text x="32" y="52" class="mono subtitle">CLOUD PLANNING + LOCAL 0-TOK EXECUTION + EDGE / FREE-CLOUD OVERFLOW</text>
-  <rect x="760" y="22" width="168" height="24" rx="5" fill="#0f2922" stroke="#10b981" stroke-width="1"/>
-  <text x="844" y="38" text-anchor="middle" class="mono metric" fill="#34d399">HYBRID ROUTING</text>
+  <text x="32" y="36" class="mono title">AI HYBRID SYSTEM TOPOLOGY (L0–L4)</text>
+  <text x="32" y="57" class="mono subtitle">CLOUD PLANNING + LOCAL 0-TOK EXECUTION + EDGE / FREE-CLOUD OVERFLOW</text>
+  <rect x="752" y="21" width="176" height="28" rx="5" fill="#0f2922" stroke="#10b981" stroke-width="1"/>
+  <text x="840" y="40" text-anchor="middle" class="mono metric" fill="#34d399">HYBRID ROUTING</text>
 
   <!-- L4: Orchestrator -->
-  <g transform="translate(32, 76)">
-    <rect width="896" height="66" rx="8" fill="#131c2b" stroke="#38bdf8" stroke-width="1.2"/>
-    <rect x="14" y="13" width="54" height="20" rx="4" fill="#0c2d48"/>
-    <text x="41" y="27" text-anchor="middle" class="mono tierTag" fill="#38bdf8">L4</text>
-    <text x="80" y="28" class="sans tierName">High-Tier Orchestrator &amp; Planner</text>
-    <text x="80" y="49" class="mono tierBody">Argon Planner + Hydrogen Executor  ·  Architecture, Multi-File Reasoning, Final Sign-Off</text>
-    <text x="878" y="28" text-anchor="end" class="mono metric" fill="#38bdf8">CLOUD / ON-DEMAND</text>
-    <text x="878" y="49" text-anchor="end" class="mono subtitle">Escalation on N=3 fail</text>
+  <g transform="translate(32, 78)">
+    <rect width="896" height="76" rx="8" fill="#131c2b" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="14" y="14" width="56" height="24" rx="4" fill="#0c2d48"/>
+    <text x="42" y="31" text-anchor="middle" class="mono tierTag" fill="#38bdf8">L4</text>
+    <text x="84" y="32" class="sans tierName">High-Tier Orchestrator &amp; Planner</text>
+    <text x="84" y="57" class="sans tierBody">Argon Planner + Hydrogen Executor · Architecture, Multi-File Reasoning, Final Sign-Off</text>
+    <text x="878" y="32" text-anchor="end" class="mono metric" fill="#38bdf8">CLOUD / ON-DEMAND</text>
+    <text x="878" y="57" text-anchor="end" class="mono edgeLabel">Escalation on N=3 fail</text>
   </g>
 
   <!-- L3.5 + L3 Split Row -->
-  <g transform="translate(32, 168)">
+  <g transform="translate(32, 182)">
     <!-- L3.5 -->
-    <rect width="436" height="72" rx="8" fill="#131c2b" stroke="#818cf8" stroke-width="1.2"/>
-    <rect x="14" y="13" width="54" height="20" rx="4" fill="#1e1b4b"/>
-    <text x="41" y="27" text-anchor="middle" class="mono tierTag" fill="#a5b4fc">L3.5</text>
-    <text x="80" y="28" class="sans tierName">Free Cloud Overflow</text>
-    <text x="80" y="50" class="mono tierBody">NVIDIA NIM · Groq (gpt-oss-120b, qwen3.8)</text>
-    <text x="420" y="28" text-anchor="end" class="mono metric" fill="#a5b4fc">ELASTIC OVERFLOW</text>
+    <rect width="436" height="82" rx="8" fill="#131c2b" stroke="#818cf8" stroke-width="1.2"/>
+    <rect x="14" y="14" width="56" height="24" rx="4" fill="#1e1b4b"/>
+    <text x="42" y="31" text-anchor="middle" class="mono tierTag" fill="#a5b4fc">L3.5</text>
+    <text x="84" y="32" class="sans tierName">Free Cloud Overflow</text>
+    <text x="84" y="59" class="sans tierBody">NVIDIA NIM · Groq (gpt-oss-120b, qwen3.8)</text>
+    <text x="420" y="32" text-anchor="end" class="mono metric" fill="#a5b4fc">ELASTIC</text>
 
     <!-- L3 -->
     <g transform="translate(460, 0)">
-      <rect width="436" height="72" rx="8" fill="#131c2b" stroke="#f59e0b" stroke-width="1.2"/>
-      <rect x="14" y="13" width="54" height="20" rx="4" fill="#3b2307"/>
-      <text x="41" y="27" text-anchor="middle" class="mono tierTag" fill="#fbbf24">L3</text>
-      <text x="80" y="28" class="sans tierName">Edge Failover Node</text>
-      <text x="80" y="50" class="mono tierBody">Poco F8 Ultra · Snapdragon 8 Elite (16 GB)</text>
-      <text x="420" y="28" text-anchor="end" class="mono metric" fill="#fbbf24">15–50 ms RTT</text>
+      <rect width="436" height="82" rx="8" fill="#131c2b" stroke="#f59e0b" stroke-width="1.2"/>
+      <rect x="14" y="14" width="56" height="24" rx="4" fill="#3b2307"/>
+      <text x="42" y="31" text-anchor="middle" class="mono tierTag" fill="#fbbf24">L3</text>
+      <text x="84" y="32" class="sans tierName">Edge Failover Node</text>
+      <text x="84" y="59" class="sans tierBody">Poco F8 Ultra · Snapdragon 8 Elite (16 GB)</text>
+      <text x="420" y="32" text-anchor="end" class="mono metric" fill="#fbbf24">15–50 ms</text>
     </g>
   </g>
 
   <!-- L2: Workstation GPU -->
-  <g transform="translate(32, 266)">
-    <rect width="896" height="74" rx="8" fill="#122126" stroke="#2dd4bf" stroke-width="1.4"/>
-    <rect x="14" y="14" width="54" height="20" rx="4" fill="#0f3330"/>
-    <text x="41" y="28" text-anchor="middle" class="mono tierTag" fill="#2dd4bf">L2</text>
-    <text x="80" y="29" class="sans tierName">Workstation GPU Inference &amp; Vision</text>
-    <text x="80" y="52" class="mono tierBody">RTX 3070 8 GB · llama-swap :10001 (mimo · bonsai 27B · moe35 · qwen4b) · JEV DOM · ComfyUI</text>
-    <text x="878" y="29" text-anchor="end" class="mono metric" fill="#2dd4bf">8,192 TOK CAP</text>
-    <text x="878" y="52" text-anchor="end" class="mono subtitle">0-tok local workers</text>
+  <g transform="translate(32, 292)">
+    <rect width="896" height="82" rx="8" fill="#122126" stroke="#2dd4bf" stroke-width="1.4"/>
+    <rect x="14" y="15" width="56" height="24" rx="4" fill="#0f3330"/>
+    <text x="42" y="32" text-anchor="middle" class="mono tierTag" fill="#2dd4bf">L2</text>
+    <text x="84" y="33" class="sans tierName">Workstation GPU Inference &amp; Vision</text>
+    <text x="84" y="60" class="sans tierBody">RTX 3070 8 GB · llama-swap :10001 (mimo · bonsai 27B · moe35 · qwen4b) · ComfyUI</text>
+    <text x="878" y="33" text-anchor="end" class="mono metric" fill="#2dd4bf">8,192 TOK CAP</text>
+    <text x="878" y="60" text-anchor="end" class="mono edgeLabel">0-tok local workers</text>
   </g>
 
   <!-- L1: CPU 3D V-Cache + DDR5 -->
-  <g transform="translate(32, 366)">
-    <rect width="896" height="74" rx="8" fill="#11221c" stroke="#34d399" stroke-width="1.4"/>
-    <rect x="14" y="14" width="54" height="20" rx="4" fill="#0d3326"/>
-    <text x="41" y="28" text-anchor="middle" class="mono tierTag" fill="#34d399">L1</text>
-    <text x="80" y="29" class="sans tierName">CPU 3D V-Cache &amp; DDR5 Memory Fabric</text>
-    <text x="80" y="52" class="mono tierBody">Ryzen 7 7800X3D (96 MiB L3) · 1M-Vector RAG 162.8 µs · 35B MoE @ 76.3 tok/s</text>
-    <text x="878" y="29" text-anchor="end" class="mono metric" fill="#34d399">11 ns L3 HIT</text>
-    <text x="878" y="52" text-anchor="end" class="mono subtitle">NTA · 6C (2–7) + 2MB THP</text>
+  <g transform="translate(32, 402)">
+    <rect width="896" height="82" rx="8" fill="#11221c" stroke="#34d399" stroke-width="1.4"/>
+    <rect x="14" y="15" width="56" height="24" rx="4" fill="#0d3326"/>
+    <text x="42" y="32" text-anchor="middle" class="mono tierTag" fill="#34d399">L1</text>
+    <text x="84" y="33" class="sans tierName">CPU 3D V-Cache &amp; DDR5 Memory Fabric</text>
+    <text x="84" y="60" class="sans tierBody">Ryzen 7 7800X3D (96 MiB L3) · 1M-Vector RAG 162.8 µs · 35B MoE @ 76.3 tok/s</text>
+    <text x="878" y="33" text-anchor="end" class="mono metric" fill="#34d399">11 ns L3 HIT</text>
+    <text x="878" y="60" text-anchor="end" class="mono edgeLabel">NTA · 6C (2–7) + 2MB THP</text>
   </g>
 
   <!-- L0: Core State Machine & Guards -->
-  <g transform="translate(32, 466)">
-    <rect width="896" height="66" rx="8" fill="#151821" stroke="#64748b" stroke-width="1.2"/>
-    <rect x="14" y="13" width="54" height="20" rx="4" fill="#1e293b"/>
-    <text x="41" y="27" text-anchor="middle" class="mono tierTag" fill="#cbd5e1">L0</text>
-    <text x="80" y="28" class="sans tierName">Deterministic State Machine, Verification &amp; Desktop Layer</text>
-    <text x="80" y="49" class="mono tierBody">AGENTS.md (S1 / S2 / S3) · Beads FPVG · bwrap Sandbox · Hyprland / Quickshell</text>
-    <text x="878" y="28" text-anchor="end" class="mono metric" fill="#cbd5e1">FAIL-CLOSED</text>
-    <text x="878" y="49" text-anchor="end" class="mono subtitle">secret-guard + DCG</text>
+  <g transform="translate(32, 512)">
+    <rect width="896" height="76" rx="8" fill="#151821" stroke="#64748b" stroke-width="1.2"/>
+    <rect x="14" y="14" width="56" height="24" rx="4" fill="#1e293b"/>
+    <text x="42" y="31" text-anchor="middle" class="mono tierTag" fill="#cbd5e1">L0</text>
+    <text x="84" y="32" class="sans tierName">Deterministic State Machine, Verification &amp; Desktop Layer</text>
+    <text x="84" y="57" class="sans tierBody">AGENTS.md (S1 / S2 / S3) · Beads FPVG · bwrap Sandbox · Hyprland / Quickshell</text>
+    <text x="878" y="32" text-anchor="end" class="mono metric" fill="#cbd5e1">FAIL-CLOSED</text>
+    <text x="878" y="57" text-anchor="end" class="mono edgeLabel">secret-guard + DCG</text>
   </g>
 
   <!-- Routing Connectors (Bidirectional Hybrid Loop) -->
-  <line x1="250" y1="144" x2="250" y2="164" stroke="#38bdf8" stroke-width="1.4" marker-start="url(#arrowCyan)" marker-end="url(#arrowCyan)"/>
-  <line x1="710" y1="144" x2="710" y2="164" stroke="#f59e0b" stroke-width="1.4" marker-start="url(#arrowAmber)" marker-end="url(#arrowAmber)"/>
-  <line x1="250" y1="242" x2="250" y2="262" stroke="#38bdf8" stroke-width="1.4" marker-start="url(#arrowCyan)" marker-end="url(#arrowCyan)"/>
-  <line x1="710" y1="242" x2="710" y2="262" stroke="#f59e0b" stroke-width="1.4" marker-start="url(#arrowAmber)" marker-end="url(#arrowAmber)"/>
-  <line x1="480" y1="342" x2="480" y2="362" stroke="#34d399" stroke-width="1.6" marker-start="url(#arrowGreen)" marker-end="url(#arrowGreen)"/>
-  <line x1="480" y1="442" x2="480" y2="462" stroke="#34d399" stroke-width="1.4" marker-start="url(#arrowGreen)" marker-end="url(#arrowGreen)"/>
+  <line x1="250" y1="156" x2="250" y2="178" stroke="#38bdf8" stroke-width="1.4" marker-start="url(#arrowCyan)" marker-end="url(#arrowCyan)"/>
+  <line x1="710" y1="156" x2="710" y2="178" stroke="#f59e0b" stroke-width="1.4" marker-start="url(#arrowAmber)" marker-end="url(#arrowAmber)"/>
+  <line x1="250" y1="266" x2="250" y2="288" stroke="#38bdf8" stroke-width="1.4" marker-start="url(#arrowCyan)" marker-end="url(#arrowCyan)"/>
+  <line x1="710" y1="266" x2="710" y2="288" stroke="#f59e0b" stroke-width="1.4" marker-start="url(#arrowAmber)" marker-end="url(#arrowAmber)"/>
+  <line x1="480" y1="376" x2="480" y2="398" stroke="#34d399" stroke-width="1.6" marker-start="url(#arrowGreen)" marker-end="url(#arrowGreen)"/>
+  <line x1="480" y1="486" x2="480" y2="508" stroke="#34d399" stroke-width="1.4" marker-start="url(#arrowGreen)" marker-end="url(#arrowGreen)"/>
 </svg>

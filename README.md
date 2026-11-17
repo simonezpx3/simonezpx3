@@ -10,7 +10,7 @@
 Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** under **Omarchy Linux (Hyprland / Wayland)**. Everything here focuses on squeezing maximum throughput out of consumer hardware—pushing **35B MoE models to 76.3 tok/s**, running **1M-vector RAG inside CPU L3 in 163 µs**, and building native Wayland/PipeWire/DKMS tooling with zero cloud lock-in.
 
 <div align="center">
-  <img src="assets/benchmarks_card.svg" alt="Why These Numbers Matter: 35B MoE 76.3 tok/s and 1M-Vector RAG 162.8 us" width="860" />
+  <img src="assets/benchmarks_card.svg" alt="Why These Numbers Matter: 35B MoE 76.3 tok/s and 1M-Vector RAG 162.8 us" width="100%" />
 </div>
 
 > [!IMPORTANT]
@@ -24,7 +24,7 @@ Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** u
 Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache retrieval, 8 GB CUDA inference, and edge/cloud overflow:
 
 <div align="center">
-  <img src="assets/neural_hive_arch.svg" alt="Hybrid AI Architecture (L0–L4)" width="860" />
+  <img src="assets/neural_hive_arch.svg" alt="Hybrid AI Architecture (L0–L4)" width="100%" />
 </div>
 
 ## Public Repositories & Benchmarks
