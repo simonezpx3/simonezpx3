@@ -15,27 +15,13 @@ Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** u
 > [!TIP]
 > **Strict security & hygiene baseline.** All public repositories follow `0700`/`0600` permission isolation, `shellcheck`/clippy/unit-test gates, and pre-push secret/path auditing.
 
-## Architecture // AHS Neural Hive (L0–L5)
+## Architecture // AHS Neural Hive (L0–L4)
 
 Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache retrieval, 8 GB CUDA inference, and edge/cloud overflow:
 
 <div align="center">
-  <img src="assets/neural_hive_3d.webp" alt="AHS Neural Hive 3D Pyramid Topology" width="820" />
+  <img src="assets/neural_hive_arch.svg" alt="AHS Neural Hive Architecture (L0–L4)" width="860" />
 </div>
-
-```mermaid
-flowchart LR
-    L0["L0 // Core & State Machine\nAGENTS.md S1/S2/S3"]
-    L1["L1 // 96 MiB 3D V-Cache (11 ns)\n1M-Vector RAG (163 µs) · Speculative N-Gram"]
-    L2["L2 // 8 GB RTX 3070 CUDA\nHot MoE Experts · q8_0 KV · ComfyUI"]
-    L3["L3 // Dual-Channel DDR5-6000\nCold MoE Experts (6C 2-7 · NTA Prefetch)"]
-    L4["L4 // Desktop & Kernel Layer\nHyprland · Quickshell · PipeWire · DKMS"]
-
-    L0 --> L1
-    L1 <-->|"Zero-VRAM Drafting"| L2
-    L2 <-->|"PCIe 4.0 x16"| L3
-    L4 --> L0
-```
 
 ## Public Repositories & Benchmarks
 
