@@ -57,3 +57,7 @@ omarchy plugin add https://github.com/simonezpx3/omarchy-vkeyboard.git --enable
 ```
 
 </details>
+
+---
+
+**Support / Hardware Fund** *(RTX 3090 24 GB & Zen 5 X3D benchmarks)*: [Ko-fi](https://ko-fi.com/simonezpx3) · [Lightning (`arcicml@coinos.io`)](https://coinos.io/arcicml) · [Bitcoin](https://mempool.space/address/bc1qzt3djcdudxx93vjuusph4r5v9w08uca6zqkf85)
