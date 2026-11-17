@@ -1,4 +1,4 @@
-# simonezpx3 — Local-First AI, 3D V-Cache & Omarchy Linux Engineering
+# AI Hybrid Systems, 3D V-Cache & Omarchy Linux
 
 [![OS: Omarchy Linux](https://img.shields.io/badge/OS-Omarchy%20%2F%20Arch%20Linux-1793d1.svg)](https://omarchy.org)
 [![CPU: Ryzen 7 7800X3D](https://img.shields.io/badge/CPU-Ryzen%207%207800X3D%20(96MB%20L3)-orange.svg)](#hardware--engineering-principles)
