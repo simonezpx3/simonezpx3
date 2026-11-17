@@ -35,10 +35,10 @@
   <rect x="0.5" y="0.5" width="959" height="559" rx="12" fill="none" stroke="#1e293b"/>
 
   <!-- Header -->
-  <text x="32" y="34" class="mono title">AHS NEURAL HIVE // HIERARCHICAL ROUTING TOPOLOGY</text>
-  <text x="32" y="52" class="mono subtitle">LOCAL-FIRST 8 GB VRAM + 96 MiB 3D V-CACHE + EDGE / CLOUD OVERFLOW</text>
+  <text x="32" y="34" class="mono title">AHS NEURAL HIVE // AI HYBRID SYSTEM TOPOLOGY</text>
+  <text x="32" y="52" class="mono subtitle">CLOUD PLANNING + LOCAL 0-TOK EXECUTION + EDGE / FREE-CLOUD OVERFLOW</text>
   <rect x="760" y="22" width="168" height="24" rx="5" fill="#0f2922" stroke="#10b981" stroke-width="1"/>
-  <text x="844" y="38" text-anchor="middle" class="mono metric" fill="#34d399">0-TOK DEFAULT TIER</text>
+  <text x="844" y="38" text-anchor="middle" class="mono metric" fill="#34d399">HYBRID ROUTING</text>
 
   <!-- L4: Orchestrator -->
   <g transform="translate(32, 76)">
@@ -59,7 +59,7 @@
     <text x="41" y="27" text-anchor="middle" class="mono tierTag" fill="#a5b4fc">L3.5</text>
     <text x="80" y="28" class="sans tierName">Free Cloud Overflow</text>
     <text x="80" y="50" class="mono tierBody">NVIDIA NIM · Groq (gpt-oss-120b, qwen3.8)</text>
-    <text x="420" y="28" text-anchor="end" class="mono metric" fill="#a5b4fc">0-COST API</text>
+    <text x="420" y="28" text-anchor="end" class="mono metric" fill="#a5b4fc">ELASTIC OVERFLOW</text>
 
     <!-- L3 -->
     <g transform="translate(460, 0)">
@@ -105,11 +105,11 @@
     <text x="878" y="49" text-anchor="end" class="mono subtitle">secret-guard + DCG</text>
   </g>
 
-  <!-- Routing Connectors -->
-  <line x1="250" y1="142" x2="250" y2="164" stroke="#38bdf8" stroke-width="1.4" marker-end="url(#arrowCyan)"/>
-  <line x1="710" y1="142" x2="710" y2="164" stroke="#f59e0b" stroke-width="1.4" marker-end="url(#arrowAmber)"/>
-  <line x1="250" y1="240" x2="250" y2="262" stroke="#38bdf8" stroke-width="1.4" marker-end="url(#arrowCyan)"/>
-  <line x1="710" y1="240" x2="710" y2="262" stroke="#f59e0b" stroke-width="1.4" marker-end="url(#arrowAmber)"/>
-  <line x1="480" y1="340" x2="480" y2="362" stroke="#34d399" stroke-width="1.6" marker-end="url(#arrowGreen)" marker-start="url(#arrowGreen)"/>
-  <line x1="480" y1="440" x2="480" y2="462" stroke="#34d399" stroke-width="1.4" marker-end="url(#arrowGreen)"/>
+  <!-- Routing Connectors (Bidirectional Hybrid Loop) -->
+  <line x1="250" y1="144" x2="250" y2="164" stroke="#38bdf8" stroke-width="1.4" marker-start="url(#arrowCyan)" marker-end="url(#arrowCyan)"/>
+  <line x1="710" y1="144" x2="710" y2="164" stroke="#f59e0b" stroke-width="1.4" marker-start="url(#arrowAmber)" marker-end="url(#arrowAmber)"/>
+  <line x1="250" y1="242" x2="250" y2="262" stroke="#38bdf8" stroke-width="1.4" marker-start="url(#arrowCyan)" marker-end="url(#arrowCyan)"/>
+  <line x1="710" y1="242" x2="710" y2="262" stroke="#f59e0b" stroke-width="1.4" marker-start="url(#arrowAmber)" marker-end="url(#arrowAmber)"/>
+  <line x1="480" y1="342" x2="480" y2="362" stroke="#34d399" stroke-width="1.6" marker-start="url(#arrowGreen)" marker-end="url(#arrowGreen)"/>
+  <line x1="480" y1="442" x2="480" y2="462" stroke="#34d399" stroke-width="1.4" marker-start="url(#arrowGreen)" marker-end="url(#arrowGreen)"/>
 </svg>
