@@ -38,33 +38,33 @@
   <text x="32" y="36" class="mono title">AI HYBRID SYSTEM TOPOLOGY (L0–L4)</text>
   <text x="32" y="57" class="mono subtitle">CLOUD PLANNING + LOCAL 0-TOK EXECUTION + EDGE / FREE-CLOUD OVERFLOW</text>
   <rect x="752" y="21" width="176" height="28" rx="5" fill="#0f2922" stroke="#10b981" stroke-width="1"/>
-  <text x="840" y="40" text-anchor="middle" class="mono metric" fill="#34d399">HYBRID ROUTING</text>
+  <text x="840" y="40" text-anchor="middle" class="mono metric" fill="#34d399">1-HOP DISPATCH</text>
 
   <!-- L4: Orchestrator -->
   <g transform="translate(32, 78)">
     <rect width="896" height="76" rx="8" fill="#131c2b" stroke="#38bdf8" stroke-width="1.2"/>
     <text x="20" y="33" class="sans tierTag" fill="#38bdf8">L4</text>
     <text x="74" y="32" class="sans tierName">High-Tier Orchestrator &amp; Planner</text>
-    <text x="74" y="57" class="sans tierBody">Argon Planner + Hydrogen Executor · Architecture, Multi-File Reasoning, Final Sign-Off</text>
-    <text x="878" y="32" text-anchor="end" class="mono metric" fill="#38bdf8">CLOUD / ON-DEMAND</text>
-    <text x="878" y="57" text-anchor="end" class="mono edgeLabel">Escalation on N=3 fail</text>
+    <text x="74" y="57" class="sans tierBody">Argon Planner + Hydrogen Executor · Architecture, Multi-File Reasoning, Read-Only Contracts</text>
+    <text x="878" y="32" text-anchor="end" class="mono metric" fill="#38bdf8">PROMPT CACHED</text>
+    <text x="878" y="57" text-anchor="end" class="mono edgeLabel">1-Hop on N=1 fail</text>
   </g>
 
-  <!-- L3.5 + L3 Split Row -->
+  <!-- FPVG + L3 Split Row -->
   <g transform="translate(32, 182)">
-    <!-- L3.5 -->
+    <!-- FPVG -->
     <rect width="436" height="82" rx="8" fill="#131c2b" stroke="#818cf8" stroke-width="1.2"/>
-    <text x="20" y="33" class="sans tierTag" fill="#a5b4fc">L3.5</text>
-    <text x="74" y="32" class="sans tierName">Free Cloud Overflow</text>
-    <text x="74" y="59" class="sans tierBody">NVIDIA NIM · Groq (gpt-oss-120b, qwen3.8)</text>
-    <text x="420" y="32" text-anchor="end" class="mono metric" fill="#a5b4fc">ELASTIC</text>
+    <text x="20" y="33" class="sans tierTag" fill="#a5b4fc">FPVG</text>
+    <text x="74" y="32" class="sans tierName">Sandboxed Verification</text>
+    <text x="74" y="59" class="sans tierBody">bwrap --ro-bind · MemoryMax=6G · AVX-512 Fuzz</text>
+    <text x="420" y="32" text-anchor="end" class="mono metric" fill="#a5b4fc">N=1 (N=2 CC)</text>
 
     <!-- L3 -->
     <g transform="translate(460, 0)">
       <rect width="436" height="82" rx="8" fill="#131c2b" stroke="#f59e0b" stroke-width="1.2"/>
       <text x="20" y="33" class="sans tierTag" fill="#fbbf24">L3</text>
-      <text x="74" y="32" class="sans tierName">Mobile Cockpit &amp; Overflow</text>
-      <text x="74" y="59" class="sans tierBody">Poco F8 Ultra (Marci E2EE) · V-Cache / Cloud Fallback</text>
+      <text x="74" y="32" class="sans tierName">Mobile Cockpit &amp; Control</text>
+      <text x="74" y="59" class="sans tierBody">Poco F8 Ultra (Marci E2EE) · S1/S2/S3 Approvals</text>
       <text x="420" y="32" text-anchor="end" class="mono metric" fill="#fbbf24">15–50 ms</text>
     </g>
   </g>
@@ -74,8 +74,8 @@
     <rect width="896" height="82" rx="8" fill="#122126" stroke="#2dd4bf" stroke-width="1.4"/>
     <text x="20" y="34" class="sans tierTag" fill="#2dd4bf">L2</text>
     <text x="74" y="33" class="sans tierName">Workstation GPU Inference &amp; Vision</text>
-    <text x="74" y="60" class="sans tierBody">RTX 3070 8 GB · llama-swap :10001 (mimo · bonsai 27B · moe35 · qwen4b) · ComfyUI</text>
-    <text x="878" y="33" text-anchor="end" class="mono metric" fill="#2dd4bf">8,192 TOK CAP</text>
+    <text x="74" y="60" class="sans tierBody">RTX 3070 8 GB · llama-swap :10001 (moe35 24k @ 2.2 GiB · qwen4b · mimo) · ComfyUI</text>
+    <text x="878" y="33" text-anchor="end" class="mono metric" fill="#2dd4bf">24,576 TOK CAP</text>
     <text x="878" y="60" text-anchor="end" class="mono edgeLabel">0-tok local workers</text>
   </g>
 
@@ -84,7 +84,7 @@
     <rect width="896" height="82" rx="8" fill="#11221c" stroke="#34d399" stroke-width="1.4"/>
     <text x="20" y="34" class="sans tierTag" fill="#34d399">L1</text>
     <text x="74" y="33" class="sans tierName">CPU 3D V-Cache &amp; DDR5 Memory Fabric</text>
-    <text x="74" y="60" class="sans tierBody">Ryzen 7 7800X3D (96 MiB L3) · 1M / 10M RAG (163 / 296 µs) · 35B MoE @ 89.5 tok/s</text>
+    <text x="74" y="60" class="sans tierBody">Ryzen 7 7800X3D (96 MiB L3) · Hot RAG (450 µs) / 10M mmap · 35B MoE (56–62 / 89.5 tok/s)</text>
     <text x="878" y="33" text-anchor="end" class="mono metric" fill="#34d399">11 ns L3 HIT</text>
     <text x="878" y="60" text-anchor="end" class="mono edgeLabel">NTA · 6C (2–7) + 2MB THP</text>
   </g>
