@@ -21,7 +21,7 @@ Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** u
 
 ## Architecture // Hybrid AI Topology (L0–L4)
 
-Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache retrieval, 8 GB CUDA inference, and edge/cloud overflow:
+Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache retrieval, 8 GB CUDA inference, and mobile/cloud overflow:
 
 <div align="center">
   <img src="assets/neural_hive_arch.svg" alt="Hybrid AI Architecture (L0–L4)" width="100%" />

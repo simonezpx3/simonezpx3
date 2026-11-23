@@ -63,8 +63,8 @@
     <g transform="translate(460, 0)">
       <rect width="436" height="82" rx="8" fill="#131c2b" stroke="#f59e0b" stroke-width="1.2"/>
       <text x="20" y="33" class="sans tierTag" fill="#fbbf24">L3</text>
-      <text x="74" y="32" class="sans tierName">Edge Failover Node</text>
-      <text x="74" y="59" class="sans tierBody">Poco F8 Ultra · Snapdragon 8 Elite (16 GB)</text>
+      <text x="74" y="32" class="sans tierName">Mobile Cockpit &amp; Overflow</text>
+      <text x="74" y="59" class="sans tierBody">Poco F8 Ultra (Marci E2EE) · V-Cache / Cloud Fallback</text>
       <text x="420" y="32" text-anchor="end" class="mono metric" fill="#fbbf24">15–50 ms</text>
     </g>
   </g>
