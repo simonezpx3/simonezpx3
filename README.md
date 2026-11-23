@@ -17,7 +17,7 @@ Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** u
 > **Local-first by default.** Consumer 8 GB GPUs hit a VRAM wall fast; pairing `llama.cpp` hot-expert caching with Ryzen 3D V-Cache core pinning (`vcache-run -c 2-7`) and non-temporal DDR5 prefetching (`GGML_MOE_NTA=1`) turns bandwidth-starved spillovers into smooth, interactive inference.
 
 > [!TIP]
-> **Target CPUs:** `zen-vcache-ai` AVX-512 kernels and 96 MiB L3 pinning are built for **AMD Ryzen 7000X3D / 9000X3D (Zen 4/5 X3D)**—on dual-CCD models, pin to the V-Cache CCD. The `llama.cpp` MoE patches and Omarchy plugins run on any modern x86_64 Linux box.
+> **Target CPUs:** `zen-vcache-ai` AVX-512 kernels and L3 pinning are tested on **AMD Ryzen 7 7800X3D** (single-CCD 96 MiB L3 + AVX-512) and target Ryzen 9000X3D (on dual-CCD models, pin strictly to CCD0). The `llama.cpp` MoE patches and Omarchy plugins run on any modern x86_64 Linux box.
 
 ## Architecture // Hybrid AI Topology (L0–L4)
 
