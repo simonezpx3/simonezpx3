@@ -21,7 +21,7 @@ Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** u
 
 ## Architecture // Hybrid AI Topology (L0–L4)
 
-Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache retrieval, 8 GB CUDA inference, and mobile/cloud overflow:
+1-hop dispatch topology balancing sub-millisecond L3 V-Cache retrieval, 24k hybrid CPU/CUDA inference, sandboxed FPVG verification, and prompt-cached cloud overflow:
 
 <div align="center">
   <img src="assets/neural_hive_arch.svg" alt="Hybrid AI Architecture (L0–L4)" width="100%" />
@@ -51,8 +51,9 @@ Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache re
 | **Languages** | C / C++, Python, Rust, QML / Qt6, Bash |
 
 ```bash
-# Run 3D V-Cache MoE inference pinned to 6 cores (2-7)
+# Run 3D V-Cache MoE inference pinned to 6 cores (2-7): max throughput (4k ctx) vs 24k Hybrid Split (2.2 GiB VRAM)
 GGML_MOE_NTA=1 ./bin/vcache-run -c 2-7 -- llama-server -m model.gguf -ngl 99 -cmoe --moe-cache-mib 4096 --moe-cache-cpu-share 0.8 -t 6
+GGML_MOE_NTA=1 ./bin/vcache-run -c 2-7 -- llama-server -m model.gguf -ngl 99 -ot "\.ffn_.*_exps\.=CPU" -fa on -ctk q8_0 -ctv q8_0 -t 6 -c 24576
 
 # Install Omarchy plugins directly
 omarchy plugin add https://github.com/simonezpx3/omarchy-qwenimage.git --enable
