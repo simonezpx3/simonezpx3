@@ -7,10 +7,10 @@
 
 ## TL;DR
 
-Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** under **Omarchy Linux (Hyprland / Wayland)**. Everything here focuses on squeezing maximum throughput out of consumer hardware—pushing **35B MoE models to 76.3 tok/s**, running **1M-vector RAG inside CPU L3 in 163 µs**, scaling **10M-vector RAG to 296 µs (3,313 QPS)**, and building native Wayland/PipeWire/DKMS tooling with zero cloud lock-in.
+Systems and local-AI engineering on **8 GB VRAM + AMD 3D V-Cache (96 MiB L3)** under **Omarchy Linux (Hyprland / Wayland)**. Everything here focuses on squeezing maximum throughput out of consumer hardware—pushing **35B MoE models to 89.5 tok/s**, running **1M-vector RAG inside CPU L3 in 163 µs**, scaling **10M-vector RAG to 296 µs (3,313 QPS)**, and building native Wayland/PipeWire/DKMS tooling with zero cloud lock-in.
 
 <div align="center">
-  <img src="assets/benchmarks_card.svg" alt="Why These Numbers Matter: 35B MoE 76.3 tok/s and 1M-Vector RAG 162.8 us" width="100%" />
+  <img src="assets/benchmarks_card.svg" alt="Why These Numbers Matter: 35B MoE 89.5 tok/s and 1M-Vector RAG 162.8 us" width="100%" />
 </div>
 
 > [!IMPORTANT]
@@ -31,7 +31,7 @@ Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache re
 
 | Repository | Domain | Highlights & Measured Results |
 | :--- | :--- | :--- |
-| [**`zen-vcache-ai`**](https://github.com/simonezpx3/zen-vcache-ai) | Local AI / C / AVX-512 | **35B MoE @ `76.3 tok/s`** (`+25.5%` gen, `+22.2%` pp128 via `GGML_MOE_NTA=1`); **1M-vector RAG in `162.8 µs`** (`6,144 QPS`, `366 GB/s`); **10M-vector RAG in `296.4 µs`** (`3,313 QPS`, `0.938` Recall@10); **1.2x–10.8x** code-editing speedup with `0 MiB` extra VRAM |
+| [**`zen-vcache-ai`**](https://github.com/simonezpx3/zen-vcache-ai) | Local AI / C / AVX-512 | **35B MoE @ `89.5 tok/s`** (`--moe-cache-cpu-share 0.8` + `vcache-run -c 2-7`); **1M-vector RAG in `162.8 µs`** (`6,144 QPS`, `366 GB/s`); **10M-vector RAG in `296.4 µs`** (`3,313 QPS`, `0.938` Recall@10); **1.2x–10.8x** code-editing speedup with `0 MiB` extra VRAM |
 | [**`omarchy-qwenimage`**](https://github.com/simonezpx3/omarchy-qwenimage) | Generative AI / Python | **QIS** — local-first generative studio (Text-to-Image, Image-to-Image, Turbo diffusion, WD14 Danbooru interrogator, Qwen3-VL vision reverse-engineering, SIMD Lanczos resizer, ComfyUI backend) ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.qwenimage)) |
 | [**`omarchy-bt-audio-eq`**](https://github.com/simonezpx3/omarchy-bt-audio-eq) | PipeWire / QML / Bash | Bluetooth codec & quality switcher (`LDAC`, `AAC`, `SBC-XQ`, `SBC`), PipeWire sample-rate selector, live telemetry, and 2-stage 10-band EQ with AutoEq ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.btquality)) |
 | [**`omarchy-vkeyboard`**](https://github.com/simonezpx3/omarchy-vkeyboard) | Wayland / Quickshell | Non-focus-stealing OSK (`WlrLayer.Overlay`) with `wtype` injection, multi-language XKB switcher, and CRT Monolithic Grid styling ([Omarchy Marketplace](https://omarchyplugins.com/plugin.html?id=simonez.vkeyboard)) |
@@ -52,7 +52,7 @@ Hierarchical multi-tier routing topology balancing sub-millisecond L3 V-Cache re
 
 ```bash
 # Run 3D V-Cache MoE inference pinned to 6 cores (2-7)
-GGML_MOE_NTA=1 ./bin/vcache-run -c 2-7 -- llama-server -m model.gguf -ngl 99 -cmoe --moe-cache-mib 4096 -t 6
+GGML_MOE_NTA=1 ./bin/vcache-run -c 2-7 -- llama-server -m model.gguf -ngl 99 -cmoe --moe-cache-mib 4096 --moe-cache-cpu-share 0.8 -t 6
 
 # Install Omarchy plugins directly
 omarchy plugin add https://github.com/simonezpx3/omarchy-qwenimage.git --enable
